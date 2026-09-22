@@ -52,6 +52,8 @@ from pychonet.lib.const import (
     ENL_FAULT_STATUS,
     ENL_INSTANTANEOUS_POWER,
     ENL_POWER_SAVING,
+    ENL_REMOTE_CONTROL,
+    ENL_STANDARD_VERSION,
 )
 from pychonet.lib.epc_functions import DATA_STATE_CLOSE, DATA_STATE_OPEN
 from pychonet.CeilingFan import (
@@ -141,6 +143,16 @@ ENL_SUPER_CODES = {
         TYPE_DATA_DICT: ["fault classification", "error code"],
     },
     ENL_POWER_SAVING: {},
+    # Diagnostics: carried by most devices and useful when debugging rather
+    # than day to day, so they are created but disabled by default.
+    ENL_STANDARD_VERSION: {
+        CONF_ICON: "mdi:file-certificate-outline",
+        CONF_DISABLED_DEFAULT: True,
+    },
+    ENL_REMOTE_CONTROL: {
+        CONF_ICON: "mdi:remote",
+        CONF_DISABLED_DEFAULT: True,
+    },
 }
 
 TYPE_MEASUREMENT_CHANNEL = {
