@@ -1328,6 +1328,154 @@ ENL_OP_CODES = {
             },  # "Vegetable compartment humidification function setting",
             0xAD: {CONF_ICON: "mdi:scent"},  # "Deodorization function setting",
         },  # Refrigerator
+        0xD5: {  # Dishwasher and dryer
+            0x90: {
+                CONF_ICON: "mdi:timer-outline",
+            },  # "ON timer reservation setting",
+            0x91: {
+                CONF_ICON: "mdi:clock-outline",
+            },  # "ON timer setting",
+            0x92: {
+                CONF_ICON: "mdi:timer-outline",
+            },  # "Relative time-based ON timer setting",
+            0xB0: {
+                CONF_TYPE: BinarySensorDeviceClass.DOOR,
+                CONF_ICON: "mdi:door",
+                CONF_ICONS: {
+                    DATA_STATE_OPEN: "mdi:door-open",
+                    DATA_STATE_CLOSE: "mdi:door-closed",
+                },
+            },  # "Door/cover open/close setting",
+            0xB1: {
+                CONF_ICON: "mdi:lock",
+            },  # "Door/cover lock setting",
+            0xB2: {
+                CONF_ICON: "mdi:play-pause",
+            },  # "Operation status setting",
+            0xD0: {
+                CONF_ICON: "mdi:dishwasher",
+            },  # "Washing method setting",
+            0xD1: {
+                CONF_ICON: "mdi:hair-dryer",
+            },  # "Drying method setting",
+            0xD2: {
+                CONF_ICON: "mdi:package-variant-closed",
+            },  # "Storage method setting",
+            0xD6: {
+                CONF_ICON: "mdi:timer-sand",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Pre-wash time setting",
+            0xD7: {
+                CONF_ICON: "mdi:thermometer-water",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Pre-wash maximum water temperature setting",
+            0xD8: {
+                CONF_ICON: "mdi:timer-sand",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Main wash time setting",
+            0xD9: {
+                CONF_ICON: "mdi:thermometer-water",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Main wash maximum water temperature setting",
+            0xDA: {
+                CONF_ICON: "mdi:counter",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Number of times of rinsing setting",
+            0xDC: {
+                CONF_ICON: "mdi:thermometer-water",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Hot water rinse maximum water temperature setting",
+            0xDD: {
+                CONF_ICON: "mdi:cup-water",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Washing water volume setting",
+            0xDE: {
+                CONF_ICON: "mdi:gauge",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Washing water pressure setting",
+            0xDF: {
+                CONF_ICON: "mdi:dishwasher",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Degree of washing setting",
+            0xE0: {
+                CONF_ICON: "mdi:timer-sand",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Drying time setting",
+            0xE1: {
+                CONF_ICON: "mdi:thermometer",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Hot air drying maximum temperature setting",
+            0xE2: {
+                CONF_ICON: "mdi:fan",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Drying air flow rate setting",
+            0xE3: {
+                CONF_ICON: "mdi:hair-dryer",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Degree of drying setting",
+            0xE4: {
+                CONF_ICON: "mdi:timer-sand",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Storage time setting",
+            0xE5: {
+                TYPE_DATA_DICT: [
+                    "preWashTime",
+                    "preWashMaxWaterTemperature",
+                    "mainWashTime",
+                    "mainWashMaxWaterTemperature",
+                    "rinseCount",
+                    "rinseMode",
+                    "hotWaterRinseMaxWaterTemperature",
+                    "washingWaterVolume",
+                    "washingWaterPressure",
+                    "degreeOfWashing",
+                    "dryingTime",
+                    "hotAirDryingMaxTemperature",
+                    "dryingAirFlowRate",
+                    "degreeOfDrying",
+                    "storageTime",
+                ],
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Operation setting information",
+            0xE6: {
+                CONF_ICON: "mdi:dishwasher",
+            },  # "Current stage of washing and drying cycle",
+            0xE7: {
+                CONF_ICON: "mdi:timer-outline",
+            },  # "ON timer remaining time",
+            0xE8: {
+                CONF_ICON: "mdi:timer-sand",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Pre-wash remaining time",
+            0xE9: {
+                CONF_ICON: "mdi:timer-sand",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Main wash remaining time",
+            0xEA: {
+                CONF_ICON: "mdi:timer-sand",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Rinsing remaining time",
+            0xEB: {
+                CONF_ICON: "mdi:timer-sand",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Washing remaining time",
+            0xEC: {
+                CONF_ICON: "mdi:timer-sand",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Drying remaining time",
+            0xED: {
+                CONF_ICON: "mdi:timer-sand",
+            },  # "Time remaining to complete washing and drying cycle",
+            0xEE: {
+                CONF_ICON: "mdi:timer-sand",
+                CONF_DISABLED_DEFAULT: True,
+            },  # "Storage elapsed time",
+            0xEF: {
+                CONF_UNIT_OF_MEASUREMENT: UnitOfVolume.LITERS,
+                CONF_STATE_CLASS: SensorStateClass.MEASUREMENT,
+                CONF_ICON: "mdi:water",
+            },  # "Water consumption",
+        },  # Dishwasher and dryer
     },
     "default": {
         CONF_ICON: None,
@@ -1373,6 +1521,12 @@ NON_SETUP_SINGLE_ENTITY = {
         0x90: {ENL_BRIGHTNESS, ENL_COLOR_TEMP},
         # Single Function Lighting
         0x91: {ENL_BRIGHTNESS, ENL_COLOR_TEMP},
+    },
+    0x03: {
+        # Dishwasher and dryer. 0xD3/0xD4/0xD5 are bitmaps of which wash, dry
+        # and storage methods the unit accepts - capability information that
+        # decodes to a list rather than a single state.
+        0xD5: {0xD3, 0xD4, 0xD5},
     },
 }
 
