@@ -5,7 +5,7 @@
   "config_flow": true,
   "documentation": "https://www.github.com/scottyphillips/echonetlite_homeassistant",
   "requirements": [
-    "git+https://github.com/liquidx/pychonet@liquidx#pychonet==2.8.3+liquidx1"
+    "git+https://github.com/liquidx/pychonet@7d3153195d1bbe90fe837e580785d3bf68cca35b#pychonet==2.8.3+liquidx1"
   ],
   "dependencies": [],
   "codeowners": [
