@@ -5,13 +5,13 @@
   "config_flow": true,
   "documentation": "https://www.github.com/scottyphillips/echonetlite_homeassistant",
   "requirements": [
-    "git+https://github.com/liquidx/pychonet@7d3153195d1bbe90fe837e580785d3bf68cca35b#pychonet==2.8.3+liquidx1"
+    "git+https://github.com/liquidx/pychonet@5ab4122e91b7b2f6960524df7c49a63cbd01a04a#pychonet==2.8.3+liquidx2"
   ],
   "dependencies": [],
   "codeowners": [
     "@scottyphillips",
     "@nao-pon"
   ],
-  "version":  "4.0.9+liquidx1",
+  "version":  "4.0.9+liquidx2",
   "iot_class": "local_polling"
 }
