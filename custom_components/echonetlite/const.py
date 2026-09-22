@@ -409,8 +409,16 @@ ENL_OP_CODES = {
                 },
             },  # "Water heating temperature setting",
             0xB4: {
-                CONF_TYPE: SensorDeviceClass.TEMPERATURE,
+                # A day count, not a temperature: 0-252 days for which manual
+                # water heating stays stopped, with 0xFD (253) meaning
+                # "indefinitely".
+                CONF_UNIT_OF_MEASUREMENT: UnitOfTime.DAYS,
                 CONF_STATE_CLASS: SensorStateClass.MEASUREMENT,
+                CONF_ICON: "mdi:calendar-remove",
+                TYPE_NUMBER: {
+                    CONF_MINIMUM: 0,
+                    CONF_MAXIMUM: 253,
+                },
             },  # "Manual water heating stop days setting",
             # 0xB5: , # "Relative time setting value for manual water heating OFF",
             # 0xB6: , # Tank operation mode setting",
